@@ -25,3 +25,4 @@ data_nascimento = datetime.datetime(ano_nascimento, mes_nascimento, dia_nascimen
 dia_de_vida = (data_atual - data_nascimento).days
 
 print(f"Você tem aproximadamente {dia_de_vida} dias de vida: ")
+print("ola")
