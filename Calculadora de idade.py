@@ -25,3 +25,17 @@ data_nascimento = datetime.datetime(ano_nascimento, mes_nascimento, dia_nascimen
 dia_de_vida = (data_atual - data_nascimento).days
 
 print(f"Você tem aproximadamente {dia_de_vida} dias de vida: ")
+
+hoje = datetime.date.today()
+ano_atual = hoje.year
+
+try:
+    proximo_aniversario = datetime.date(ano_atual, mes_nascimento, dia_nascimento)
+except ValueError:
+    print("Data inválida pro próximo aniversário")
+else:
+    if proximo_aniversario < hoje:
+        proximo_aniversario = datetime.date(ano_atual + 1, mes_nascimento, dia_nascimento)
+
+    dias_para_aniversario = (proximo_aniversario - hoje).days
+    print(f"Faltam {dias_para_aniversario} dias pro seu próximo aniversário!")
